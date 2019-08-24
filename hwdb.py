@@ -37,12 +37,12 @@ if __name__ == '__main__':
     dataset = HWDB(transform=transform, path=r'C:\Users\Administrator\Desktop\hand-writing-recognition\data')
     print(dataset.train_size)
     print(dataset.test_size)
-    # for i in [1020, 120, 2000, 6000, 1000]:
-    #     img, label = dataset.get_sample(i)
-    #     img = img[0]
-    #     print(label)
-    #     plt.imshow(img, cmap='gray')
-    #     plt.show()
+    for i in [1020, 120, 2000, 6000, 1000]:
+        img, label = dataset.get_sample(i)
+        img = img[0]
+        print(label)
+        plt.imshow(img, cmap='gray')
+        plt.show()
 
     train_loader, test_loader = dataset.get_loader()
     print(len(train_loader))

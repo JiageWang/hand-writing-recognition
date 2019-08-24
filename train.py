@@ -97,7 +97,7 @@ if __name__ == "__main__":
     print("测试集数据:", dataset.test_size)
     trainloader, testloader = dataset.get_loader(batch_size)
 
-    net = ConvNet2(num_classes)
+    net = ConvNet(num_classes)
     print('网络结构：\n', net)
     if torch.cuda.is_available():
         net = net.cuda()

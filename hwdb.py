@@ -34,7 +34,7 @@ if __name__ == '__main__':
         transforms.Resize((64, 64)),
         transforms.ToTensor(),
     ])
-    dataset = HWDB(transform=transform, path=r'C:\Users\Administrator\Desktop\hand-writing-recognition\data')
+    dataset = HWDB(transform=transform, path=r'data')
     print(dataset.train_size)
     print(dataset.test_size)
     for i in [1020, 120, 2000, 6000, 1000]:
@@ -45,7 +45,6 @@ if __name__ == '__main__':
         plt.show()
 
     train_loader, test_loader = dataset.get_loader()
-    print(len(train_loader))
     # for (img, label) in train_loader:
     #     print(img)
     #     print(label)

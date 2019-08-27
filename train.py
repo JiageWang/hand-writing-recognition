@@ -76,15 +76,16 @@ def train(epoch, net, criterion, optimizer, train_loader, writer, save_iter=100)
 
 
 if __name__ == "__main__":
-    data_path = r'data'
-    log_path = r'logs/batch_100_100_lr0.02'
-    save_path = r'checkpoints/'
-    if not os.path.exists(save_path):
-        os.mkdir(save_path)
     # 超参数
     epochs = 20
     batch_size = 100
-    lr = 0.0001
+    lr = 0.01
+
+    data_path = r'data'
+    log_path = r'logs/batch_{}_lr_{}'.format(batch_size, lr)
+    save_path = r'checkpoints/'
+    if not os.path.exists(save_path):
+        os.mkdir(save_path)
 
     # 读取分类类别
     with open('char_dict', 'rb') as f:
